@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      height: 100vh; /* Establecer altura del viewport */
+      padding: 50px 0;
+      text-align: center;
+      opacity: 0; /* Inicialmente ocultar todas las secciones */
+      transition: opacity 0.5s ease-in-out; /* Transición de opacidad */
+    }
+    /* Estilos de productos */
+    .product-card {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sección de Bienvenida -->
+  <section id="welcome">
+    <h1>Bienvenido a nuestra página</h1>
+  </section>
+
+  <!-- Sección de Productos -->
+  <section id="products">
+    <h2>Nuestros Productos</h2>
+    <div id="product-list"></div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>¡Contáctanos para más información!</p>
+  </section>
+
+  <!-- Sección de Reseña -->
+  <section id="review">
+    <h2>Reseñas</h2>
+    <p>Aquí puedes encontrar las reseñas de nuestros clientes.</p>
+  </section>
+
+  <script>
+    // Función para manejar el desplazamiento entre secciones
+    function handleSectionScroll() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight) {
+          section.style.opacity = '1'; // Mostrar la sección cuando entra en el viewport
+        } else {
+          section.style.opacity = '0'; // Ocultar la sección cuando sale del viewport
+        }
+      });
+    }
+
+    // Función para cargar la lista de productos
+    function loadProducts() {
+      const productList = document.getElementById('product-list');
+      const products = [
+        { name: 'Producto 1', image: 'product1.jpg', category: 'Categoria 1' },
+        { name: 'Producto 2', image: 'product2.jpg', category: 'Categoria 2' },
+        { name: 'Producto 3', image: 'product3.jpg', category: 'Categoria 1' },
+        // Agrega más productos según sea necesario
+      ];
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('product-card');
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>${product.category}</p>
+        `;
+        productList.appendChild(card);
+      });
+    }
+
+    // Cargar la lista de productos al cargar la página
+    window.addEventListener('DOMContentLoaded', () => {
+      loadProducts();
+      handleSectionScroll(); // Mostrar las secciones inicialmente visibles
+    });
+
+    // Manejar la animación al desplazarse por la página
+    window.addEventListener('scroll', () => {
+      handleSectionScroll();
+    });
+  </script>
+</body>
+</html>
+

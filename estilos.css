@@ -15,17 +15,36 @@ h2 {
 
 header {
     width: 100%;
-    color: white        ;
+    color: white;
     display: flex;
-    position: absolute;
+    position: absolute; /*contenido absoluto*/
+    /* position: fixed; */
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a{
+    padding: 1rem;
+}
+
+.velo {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 0 7.5%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #banner-principal {
+    width: 100%;
+    height: 14vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 7.5%;
 }
 
 #top {
@@ -35,15 +54,12 @@ header {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
-    padding-left: 7.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-attachment: fixed;
 }
 
 .btn_header {
-    padding: 1rem;
+    width: 10rem;
+    padding: .75rem;
     background: none;
     color: white;
     border: 1px solid white;
@@ -70,9 +86,36 @@ a {
     text-decoration: none;
     color: white;
     font-size: 100%;
-    padding: 3tem 0;
+    padding: 3rem 0;
 }
 
+#menu-responsivo {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #banner-principal {
+        justify-content: space-between;
+    }
+
+    ul {
+        width: 100%;
+        display: flex;
+        background-color: #3A3A3A;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    ul a:hover {
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    #menu-responsivo {
+        display: block;
+        height: 10vh;
+        width: 10vh;
+    }
+}
 
 /* SEGUNDA SECCION */
 #aceca_de {
@@ -99,13 +142,14 @@ a {
 .mensaje {
     display: flex;
     width: 100%;
-    background-image: url('imagenes/portada1.jpg');
+    background-image: url('imagenes/foto8.webp');
     background-size: cover;
-    background-repeat: no-repeat;
     font-size: 48px;
     color: white;
     padding: 2em;
     text-align: center;
+    background-position: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /*  CUARTA SECCION */
@@ -194,17 +238,28 @@ a {
     padding: 14em 4em 4em 4em;
 }
 
-#comentarios div {
+#comentarios h2 {
+    position: absolute;
+}
+
+#contenido-comentarios {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.columna-comentarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5%;
+}
+
 .comentario {
     background-color: white;
     width: 25rem;
-    margin: 1em;
+    margin: 5%;
     padding: 40px;
 }
 
@@ -221,7 +276,7 @@ a {
     justify-content: center;
 }
 
-/*  */
+/* asd */
 
 #imagenes {
     display: flex;
@@ -269,7 +324,7 @@ hr {
     margin: 60px 0;
 }
 
-/*  */
+/* asd */
 footer {
     background-color: #edeae8;
     height: 15vh;
@@ -281,11 +336,31 @@ footer {
     color: #b37e6b;
 }
 
-footer img {
+
+.icon {
     height: 1.5rem;
     margin-left: 1rem;
 }
 
 #icono path:hover {
     fill: #ff0000; /* Cambia el color al que prefieras */
+}
+
+
+
+
+
+
+#imagenes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35vh; /* Altura de cada imagen */
+    overflow-y:auto; /* Permite desplazamiento horizontal */
+    flex-wrap: nowrap; /* Evita el salto de línea entre las imágenes */
+}
+
+#imagenes img {
+    width: 33%; /* Tamaño cuadrado */
+    height: 100%;
 }
