@@ -49,7 +49,7 @@ nav a{
 
 #top {
     color: white;
-    background-image: url('imagenes/portada1.jpg');
+    background-image: url('imagenes/portada1.webp');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -94,28 +94,40 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    #banner-principal {
-        justify-content: space-between;
-    }
 
-    ul {
+    /* ul {
         width: 100%;
         display: flex;
         background-color: #3A3A3A;
         flex-direction: column;
         text-align: center;
 
-    }
+    } */
     ul a:hover {
         background-color: rgba(0, 0, 0, .5);
     }
 
-    #menu-responsivo {
-        display: block;
-        height: 10vh;
-        width: 10vh;
+    #contenido-acerca-de {
+        display: flex;
+        flex-direction: column;
     }
-}
+
+    #contenido-acerca-de div{
+        width: 100%;
+    }
+    h2 {
+        font-size: 48px;
+        color: #3A3A3A;
+        font-weight: 400;
+        font-family: 'Cormorant Garamond', serif;
+        margin-bottom: 2rem;
+    }
+    #titulo-principal {
+        font-size: 40px;
+        font-weight: 400;
+        margin: 5rem 0;
+    }
+} 
 
 /* SEGUNDA SECCION */
 #aceca_de {
@@ -125,13 +137,19 @@ a {
     padding: 5%;
 }
 
+#contenido-acerca-de p {
+    margin-bottom: 1rem;
+    color: #3A3A3A;
+    font-weight: 100;
+}
+
 #contenido-acerca-de {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;    
 }
 
 #contenido-acerca-de div {
-    width: 50%;
+    width: 50rem;
 }
 
 .titulo-grande {
@@ -214,6 +232,8 @@ a {
     font-size: 24px;
     border: none;
     border-radius: 5px;
+    padding: 1rem;
+    width: 100%;
 }
 
 #cuenta button {
@@ -254,11 +274,11 @@ a {
     flex-direction: column;
     justify-content: center;
     margin: 0 5%;
+    width: 40%;
 }
 
 .comentario {
     background-color: white;
-    width: 25rem;
     margin: 5%;
     padding: 40px;
 }
@@ -342,25 +362,16 @@ footer {
     margin-left: 1rem;
 }
 
-#icono path:hover {
-    fill: #ff0000; /* Cambia el color al que prefieras */
-}
-
-
-
-
-
-
 #imagenes {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 35vh; /* Altura de cada imagen */
-    overflow-y:auto; /* Permite desplazamiento horizontal */
-    flex-wrap: nowrap; /* Evita el salto de línea entre las imágenes */
+    height: 35vh;
+    overflow-y:auto; 
+    flex-wrap: nowrap; 
 }
 
 #imagenes img {
-    width: 33%; /* Tamaño cuadrado */
+    width: 33%;
     height: 100%;
 }
