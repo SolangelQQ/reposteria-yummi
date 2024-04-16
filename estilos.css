@@ -23,6 +23,10 @@ header {
     justify-content: center;
 }
 
+.menu-responsivo {
+    display: none;
+}
+
 nav a{
     padding: 1rem;
 }
@@ -139,6 +143,18 @@ a {
         display: none;
     }
     footer div{
+        display: none;
+    }
+    .menu-responsivo {
+        display: flex;
+        background-color:transparent;
+        border: none;
+        img {
+            height: 2rem;
+            margin-right: 2rem;
+        }
+    }
+    ul {
         display: none;
     }
 } 
